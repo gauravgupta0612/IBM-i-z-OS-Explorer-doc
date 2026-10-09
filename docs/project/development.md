@@ -50,17 +50,22 @@ npm install
 ```text
 src/
   extension.ts        activation: views, file system, status bar
-  commands.ts         every command (z/OS + IBM i)
+  commands.ts         connections, core z/OS + IBM i commands
+  general.ts          favorites, compare with local, export/import connections
   profiles.ts         connection profiles, password storage, connection wizard
   sessions.ts         one live client per connection
   fsProvider.ts       "mf:" file system (open/save remote files) + read-only spool documents
   log.ts              output channel and error handling
   zos/zosmf.ts        z/OSMF REST client: data sets, USS, jobs, TSO, console
-  ibmi/ibmiClient.ts  SSH/SFTP client: CL, SQL, members, IFS, spool, jobs
+  zos/zosCommands.ts  search, copy/rename, download/upload, job JCL, JCL templates
+  ibmi/ibmiClient.ts  SSH/SFTP client: CL, SQL, members, IFS, spool, jobs, messages
+  ibmi/ibmiCommands.ts search, library list, object actions, message queues
+  ui/helpers.ts       shared UI helpers (command registration, pickers, prompts)
   ui/trees.ts         sidebar trees for z/OS and IBM i
   ui/sqlView.ts       SQL result grid (webview)
   ui/terminal.ts      PASE SSH terminal
 syntaxes/             TextMate grammars: JCL, CL, RPGLE, COBOL
+snippets/             JCL, COBOL, RPGLE, CL snippets
 media/                icons
 .github/workflows/    build + release on tag
 ```
@@ -68,9 +73,11 @@ media/                icons
 ## Adding a command
 
 1. Declare it in `package.json` → `contributes.commands` (and `menus` if it belongs in the tree).
-2. Register it in `src/commands.ts` with `reg('mf.…', handler)`.
+2. Register it with `reg('mf.…', handler)` in the matching module (`zos/zosCommands.ts`, `ibmi/ibmiCommands.ts` or `general.ts`).
 3. Put any host access in `ZosmfClient` or `IbmiClient`.
 4. Document it here (the [Commands](../reference/commands.md) page) and in `CHANGELOG.md`.
+
+See [Architecture](architecture.md) for the internals and a full example.
 
 ## This documentation
 

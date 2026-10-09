@@ -37,9 +37,12 @@ Three things are added for you: a data set filter `YOURID.*`, a job filter (owne
 
 | Node | Content |
 |---|---|
-| **Data Sets** | Your data set filters. Expand a filter to list data sets; expand a PDS/PDSE for members. |
+| **Favorites** | Only when you have favorites: members, data sets and USS files starred with **Add to Favorites** |
+| **Data Sets** | Your data set filters. Expand a filter to list data sets; expand a PDS/PDSE for members. Right-click for search, copy, rename, download, upload and attributes. |
 | **Unix Files (USS)** | Your USS paths |
-| **Jobs** | Your job filters. Expand for jobs, then for the spool files of a job. |
+| **Jobs** | Your job filters. Expand for jobs, then for the spool files of a job. Right-click a job to view its JCL, resubmit, cancel or purge it. |
+
+Next: the [z/OS developer workflow](../zos/developer-workflow.md) shows a full edit → compile → run cycle. If something doesn't work, send your system programmer the [z/OSMF setup](../zos/zosmf-setup.md) page.
 
 ## How it works
 
@@ -49,7 +52,8 @@ All calls use the z/OSMF REST APIs, with Basic authentication over HTTPS and the
 |---|---|
 | Data sets / members | `/zosmf/restfiles/ds` |
 | USS | `/zosmf/restfiles/fs` |
-| Jobs / spool / submit | `/zosmf/restjobs/jobs` |
+| Jobs / spool / submit / job JCL | `/zosmf/restjobs/jobs` |
+| Copy / rename / attributes | `/zosmf/restfiles/ds` (`request: copy / rename`) |
 | TSO | `/zosmf/tsoApp/tso` |
 | Console | `/zosmf/restconsoles/consoles/defcn` |
 

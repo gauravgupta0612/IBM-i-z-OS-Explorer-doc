@@ -37,6 +37,27 @@ Click a member to open it. Press ++ctrl+s++ to save it back to the member.
 
 Source types offered: `RPGLE`, `SQLRPGLE`, `CLLE`, `CBLLE`, `SQLCBLLE`, `PF`, `LF`, `DSPF`, `PRTF`, `CMD`, `SQL`, `RPGLEINC`, `TXT`.
 
+## Search text in source
+
+Right-click a **source file** (searches its members) or a **library** (searches all its source files) → **Search Text in Source…**.
+
+The search runs on the IBM i with Qshell `grep` (case-insensitive, plain text). Hits are listed as `MEMBER.type:line`; pick one to open the member at that line.
+
+## Object actions
+
+Right-click any object in a library:
+
+| Action | For | Runs | Shows |
+|---|---|---|---|
+| **Object Description (DSPOBJD)** | all objects | `DSPOBJD … DETAIL(*FULL) OUTPUT(*PRINT)` | Full object description in an editor |
+| **Program References (DSPPGMREF)** | `*PGM`, `*SRVPGM`, `*MODULE` | `DSPPGMREF … OUTPUT(*PRINT)` | Files, programs and data areas the object uses |
+| **File Fields (DSPFFD)** | `*FILE` | `DSPFFD … OUTPUT(*PRINT)` | Record formats and fields |
+| **Query Data (first 1000 rows)** | `*FILE` | `select * from LIB.FILE fetch first 1000 rows only` | The SQL result grid |
+| **Rename Object…** | all objects | `RNMOBJ` | |
+| **Delete Object…** | all objects | `DLTOBJ` (asks for confirmation first) | |
+
+The menu only shows the actions that apply to the object's type.
+
 ## Delete
 
 Right-click a member → **Delete Member** (`RMVM`). You are asked to confirm first.

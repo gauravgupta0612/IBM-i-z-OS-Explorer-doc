@@ -20,22 +20,32 @@ Browse, edit, compile and run on both platforms from a single **IBM i & z/OS** v
     ---
 
     - Data sets and PDS/PDSE members: open, edit and save back to the host
-    - USS files
-    - Submit JCL, follow jobs and read spool output
-    - TSO and MVS console commands
+    - Search, copy, rename, download and upload members
+    - Submit JCL, follow jobs, read spool, resubmit
+    - COBOL compile/link/run JCL from templates; TSO and console
 
-    [:octicons-arrow-right-24: z/OS features](zos/datasets.md)
+    [:octicons-arrow-right-24: z/OS developer workflow](zos/developer-workflow.md)
 
 -   :material-server: **IBM i (through SSH)**
 
     ---
 
-    - Libraries, source files and members: edit and save
+    - Libraries, source files and members: edit, search, save
+    - Library list and current library for CL and compiles
     - Compile, with errors shown in the Problems panel
-    - CL commands; SQL results in a sortable grid
-    - IFS, spooled files, job logs, PASE terminal
+    - CL, SQL grid, object actions, QSYSOPR replies, IFS, spool, terminal
 
     [:octicons-arrow-right-24: IBM i features](ibmi/libraries.md)
+
+-   :material-star: **Productivity**
+
+    ---
+
+    - Favorites and compare with a local file
+    - Export/import connections for your team (no passwords)
+    - Snippets for JCL, COBOL, RPGLE and CL
+
+    [:octicons-arrow-right-24: Productivity](reference/productivity.md)
 
 -   :material-shield-key: **Secure by design**
 
@@ -73,4 +83,5 @@ Browse, edit, compile and run on both platforms from a single **IBM i & z/OS** v
 - Network access from your PC to the host (VPN if needed)
 
 !!! tip "New here?"
-    Follow the [Quick start](getting-started/quick-start.md). You will have your first connection in about two minutes.
+    Follow the [Quick start](getting-started/quick-start.md): your first connection takes about two minutes.
+    z/OS developers can then continue with the [developer workflow](zos/developer-workflow.md); system programmers will find what to enable in [z/OSMF setup](zos/zosmf-setup.md).

@@ -5,6 +5,33 @@ All notable changes to **IBM i & z/OS Explorer**. This page is generated automat
 !!! tip "Which version do I have?"
     **Extensions** (Ctrl+Shift+X) → *IBM i & z/OS Explorer*: the version is shown next to the name.
 
+## [1.1.0] – 2026-10-09
+
+[:material-tag: Release v1.1.0](https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer/releases/tag/v1.1.0) · [:material-download: ibmi-zos-explorer-1.1.0.vsix](https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer/releases/download/v1.1.0/ibmi-zos-explorer-1.1.0.vsix)
+
+### Added – z/OS
+- **Search text** in a partitioned data set, or in every PDS of a data set filter; results open at the matching line.
+- **Copy** a member to another data set (with an overwrite check), **copy all members** of a PDS, **rename** members and data sets.
+- **Data set attributes** (organization, record format, space, dates, volume…).
+- **Download all members** of a PDS to a local folder, and **upload a local folder** into a PDS.
+- **Jobs:** view and edit a job's original JCL, and **resubmit** a job in one click.
+- **JCL templates:** generate COBOL compile + link (IGYWCL), compile-link-go (IGYWCLG), assembler (ASMACL) and "run program" JCL for a member. Add your own templates in the settings; the job card, load library and copy library are configurable.
+
+### Added – IBM i
+- **Search text** in a source file or in all source files of a library, and in IFS folders.
+- **Library list and current library** for CL commands and compiles, managed in the new *Library List* node (add, remove, reorder, set current library).
+- **Object actions:** delete, rename, object description (DSPOBJD), program references (DSPPGMREF), file fields (DSPFFD), and query the data of a file (first 1000 rows in the SQL grid).
+- **Message queues:** browse QSYSOPR and your own message queue, read message help, and reply to inquiry messages.
+
+### Added – general
+- **Favorites:** star members and files for one-click access at the top of each connection.
+- **Compare with local file** for any remote member or file.
+- **Export and import connections**, without passwords, to share them with colleagues.
+- **Snippets** for JCL (job card, IEFBR14, IEBCOPY, IEBGENER, SORT, IDCAMS, IKJEFT01…), COBOL, RPGLE (free format) and CL.
+
+### Fixed
+- Commands that need an item from the tree no longer appear in the Command Palette, where they could not work.
+
 ## [1.0.0] – 2026-10-09
 
 [:material-tag: Release v1.0.0](https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer/releases/tag/v1.0.0) · [:material-download: ibmi-zos-explorer-1.0.0.vsix](https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer/releases/download/v1.0.0/ibmi-zos-explorer-1.0.0.vsix)

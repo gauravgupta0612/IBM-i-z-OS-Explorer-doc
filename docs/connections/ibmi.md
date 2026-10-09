@@ -41,8 +41,11 @@ After saving, the connection is tested automatically.
 |---|---|
 | **Libraries** | Your library filters. Each library shows its **source files** (expand for members) and all other **objects** (`*PGM`, `*SRVPGM`, `*FILE`, `*MODULE`, `*DTAARA`…). |
 | **IFS** | Your IFS paths. Expand folders; click a file to edit it. |
+| **Favorites** | Only when you have favorites: members and files starred with **Add to Favorites** |
+| **Library List** | Current library and the libraries added to the library list of CL commands and compiles ([details](../ibmi/library-list.md)) |
 | **My Spooled Files** | Your spooled files, newest first (up to 300) |
 | **My Active Jobs** | Your active jobs. Click one to see its job log. |
+| **Message Queues** | QSYSOPR and your own message queue; reply to inquiries ([details](../ibmi/messages.md)) |
 
 ## Object library for compiles
 
@@ -53,7 +56,8 @@ To use another library: right-click the connection → **Edit Connection** → p
 
 | Operation | Implementation |
 |---|---|
-| CL commands | PASE `/QOpenSys/usr/bin/system "<command>"` |
+| CL commands | PASE `/QOpenSys/usr/bin/system "<command>"`; with a library list set, Qshell `liblist` + `system` |
+| Search in source | Qshell `grep` on `/QSYS.LIB/…/*.MBR` |
 | SQL | `db2util -o json` if installed, otherwise Qshell `db2 -f <file>` |
 | Read a member | `CPYTOSTMF … STMFCCSID(1208)`, then SFTP download |
 | Save a member | SFTP upload, `setccsid 1208`, then `CPYFRMSTMF … MBROPT(*REPLACE)` |

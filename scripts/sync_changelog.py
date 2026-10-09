@@ -29,7 +29,8 @@ def get(url: str, accept: str = "*/*") -> bytes:
 
 def main() -> int:
     try:
-        changelog = get(RAW).decode("utf-8")
+        local = os.environ.get("CHANGELOG_PATH")  # preview with a local CHANGELOG.md
+        changelog = open(local, encoding="utf-8").read() if local else get(RAW).decode("utf-8")
     except Exception as e:  # keep the committed copy
         print(f"WARNING: could not download CHANGELOG.md ({e}); keeping existing page")
         return 0

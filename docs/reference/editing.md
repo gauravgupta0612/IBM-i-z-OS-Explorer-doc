@@ -30,4 +30,6 @@ Comment toggling (++ctrl+slash++) and bracket matching work for all four languag
 
 - **Compare with local:** right-click a remote editor tab → **Select for Compare**, then right-click a local file → **Compare with Selected**.
 - **Save a local copy:** **File → Save As…** and pick a local folder.
-- **Search inside a member:** ++ctrl+f++ works as usual. Searching across members on the host isn't supported yet.
+- **Search inside a member:** ++ctrl+f++ works as usual.
+- **Search across members on the host:** right-click a PDS or data set filter (z/OS), or a source file, library or IFS folder (IBM i) → **Search Text…**. See [Data sets](../zos/datasets.md#search-text) and [Libraries](../ibmi/libraries.md#search-text-in-source).
+- **Snippets:** type a prefix such as `jobcard`, `program` or `dcl-proc` and press ++tab++ ([full list](../zos/jcl-templates.md#snippets)).

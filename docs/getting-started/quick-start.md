@@ -47,7 +47,8 @@ Expand the connection:
 |---|---|
 | **Data Sets**: one filter (`YOURID.*`) is added for you | **Libraries**: your own library is added for you |
 | **Unix Files (USS)**: `/u/yourid` | **IFS**: `/home/YOURID` |
-| **Jobs**: your own jobs | **My Spooled Files** and **My Active Jobs** |
+| **Jobs**: your own jobs | **Library List**: libraries for CL and compiles |
+| | **My Spooled Files**, **My Active Jobs** and **Message Queues** |
 
 Click any member or file to open it. Edit it, then press ++ctrl+s++ to save it **on the host**.
 
@@ -56,6 +57,17 @@ Click any member or file to open it. Edit it, then press ++ctrl+s++ to save it *
 - **z/OS:** open a JCL member and press ++ctrl+alt+s++ to submit it. Choose **Wait & Show Output** to see the spool when the job ends.
 - **IBM i:** open an RPGLE member and press ++ctrl+e++ to compile it. Any errors appear in the **Problems** panel.
 - **IBM i SQL:** right-click the connection → **Run SQL** and type `select * from qsys2.library_list_info`.
+- **z/OS JCL from a template:** right-click a COBOL member → **Generate JCL from Template…** (see the [developer workflow](../zos/developer-workflow.md)).
+- **Search:** right-click a PDS, source file or library → **Search Text…**.
+
+## 5. Next steps
+
+| You are… | Read |
+|---|---|
+| A z/OS developer | [z/OS developer workflow](../zos/developer-workflow.md) |
+| An IBM i developer | [Library list](../ibmi/library-list.md) and [Compile](../ibmi/compile.md) |
+| A z/OS system programmer | [z/OSMF setup](../zos/zosmf-setup.md) |
+| Setting up a team | [Export and import connections](../reference/productivity.md#export-and-import-connections) |
 
 !!! info "Where do I see what happened?"
     **View → Output** → choose **IBM i & z/OS** in the dropdown. Every request sent to the host is listed there, without passwords.

@@ -11,6 +11,8 @@ Under **IFS**, click **Add IFS Path** and enter a directory, for example `/home/
 | New file / folder | Right-click a folder → **Create IFS File** / **Create IFS Directory** |
 | Delete | Right-click → **Delete IFS Entry**. You are asked to confirm, and folders are deleted with all their contents. |
 
+Right-click a folder → **Search Text in IFS Folder…** to search all text files below it (case-insensitive, binary files skipped, first 500 hits).
+
 IFS files are transferred unchanged over SFTP. Files in EBCDIC CCSIDs will look garbled; convert them to UTF-8 (CCSID 1208) first.
 
 ## My Spooled Files

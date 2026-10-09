@@ -54,6 +54,28 @@ Each data set shows its **DSORG RECFM LRECL VOLSER**. The icons show:
 
 **Upload:** right-click a PDS → **Upload Local File to Member / USS**. Pick one or more files. Each member name is the file name without its extension, cut to 8 characters.
 
+## Search text
+
+- **In one PDS:** right-click it → **Search Text in Data Set…**
+- **In every PDS of a filter:** right-click the filter → **Search Text in All PDS of Filter…** (asks first if there are more than 10 data sets)
+
+The search is case-insensitive and reads each member (6 in parallel); you can cancel it from the progress notification. Hits are listed as `MEMBER:line`; pick one to open the member **at that line**, with the text selected.
+
+## Copy, rename and attributes
+
+| Action | How | Notes |
+|---|---|---|
+| Copy one member | Right-click a member → **Copy Member To…** → `DATA.SET(MEMBER)` | The target data set must exist; you are asked before an existing member is replaced |
+| Copy all members | Right-click a PDS → **Copy All Members To…** | Choose whether existing members in the target are replaced |
+| Rename a member | Right-click → **Rename Member…** | |
+| Rename a data set | Right-click → **Rename Data Set…** | |
+| Attributes | Right-click a data set → **Show Data Set Attributes** | Organization, RECFM, LRECL, block size, volume, space used, extents, dates… |
+
+## Download and upload whole libraries
+
+- **Download All Members to Folder…** (right-click a PDS): pick a local folder. A sub-folder named after the data set is created with one file per member (`MEMBER.cbl`, `MEMBER.jcl`…). This is handy for working offline or putting a library under Git.
+- **Upload Folder into Data Set…** (right-click a PDS): every file in the folder becomes a member, named after the file without its extension (8 characters, A-Z 0-9 # $ @). Existing members with the same name are replaced, after a confirmation.
+
 ## Delete
 
 Right-click a member or data set → **Delete**. You are asked to confirm; this can't be undone.

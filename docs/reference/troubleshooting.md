@@ -38,6 +38,18 @@
 | National characters wrong | Set `mainframe.zos.encoding` (e.g. `IBM-037`, `IBM-273`, `IBM-297`, `IBM-1047`) |
 | Job list shows only some jobs | Raise `mainframe.zos.maxItems`, or use a narrower job filter |
 
+## New in 1.1
+
+| Symptom | Fix |
+|---|---|
+| Compile can't find a `/COPY` member or file | Add its library to the [Library List](../ibmi/library-list.md), then compile again |
+| Library list seems ignored | Run `DSPLIBL OUTPUT(*PRINT)` with **Run CL Command** to see the list actually used |
+| IBM i search finds nothing | Check the search term; the search is plain text (no wildcards). For IFS, binary files are skipped. |
+| z/OS search is slow | It reads every member: search one PDS instead of a whole filter, or cancel from the notification |
+| Generated JCL fails with `PROCEDURE NOT FOUND` | Uncomment the `JCLLIB` line in the template and set your site's procedure library |
+| `Reply…` fails with *already replied* | Refresh the message queue; answered inquiries no longer offer a reply |
+| Upload Folder refuses to start | Two files would become the same member (e.g. `PGM1.cbl` and `PGM1.cpy`); rename one |
+
 ## Still stuck?
 
 Open an issue at <https://github.com/gauravgupta0612/IBM-i-z-OS-Explorer/issues>. Include:

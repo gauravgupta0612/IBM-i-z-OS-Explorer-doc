@@ -43,6 +43,13 @@ Each job shows **JOBNAME(JOBID)** with its status and return code:
 - Click **Open All Spool Output** (output icon on the job) to open all spool files in one document, with a separator between them.
 - Spool documents are **read-only**.
 
+## View, edit and resubmit the JCL
+
+Right-click a job:
+
+- **View / Edit Job JCL**: opens the JCL exactly as it was submitted, in a new JCL editor. Change it if needed and press ++ctrl+alt+s++ to submit it again.
+- **Resubmit Job**: submits the same JCL again straight away, then offers to wait for it and show the output.
+
 ## Cancel / purge
 
 Right-click a job:

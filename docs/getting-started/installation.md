@@ -11,7 +11,7 @@
 === "Command line"
 
     ```bash
-    code --install-extension ibmi-zos-explorer-1.0.0.vsix
+    code --install-extension ibmi-zos-explorer-1.1.0.vsix
     ```
 
 === "Several PCs"
