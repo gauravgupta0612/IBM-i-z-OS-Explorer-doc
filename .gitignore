@@ -1,0 +1,6 @@
+site/
+__pycache__/
+.venv/
+.cache/
+/github-workflow-docs.yml
+/publish-docs.bat
